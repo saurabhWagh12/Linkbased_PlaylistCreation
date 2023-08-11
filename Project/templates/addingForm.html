@@ -1,0 +1,96 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link rel="stylesheet" href="styles.css">
+    <title>Login Form</title>
+    <style>
+        body {
+            font-family: Arial, sans-serif;
+            background-color: #f0f0f0;
+            margin: 0;
+            display: flex;
+            justify-content: center;
+            align-items: center;
+            min-height: 100vh;
+        }
+        
+        .login-container {
+            background-color: #ffffff;
+            border-radius: 8px;
+            box-shadow: 0px 0px 20px rgba(0, 0, 0, 0.1);
+            padding: 20px;
+            width: 350px;
+            text-align: center;
+        }
+        
+        .login-form h2 {
+            margin-bottom: 20px;
+            color: #333333;
+        }
+        
+        .input-group {
+            margin-bottom: 20px;
+        }
+        
+        .input-group label {
+            display: block;
+            font-weight: 600;
+            margin-bottom: 5px;
+            color: #555555;
+        }
+        
+        .input-group input {
+            width: 80%;
+            padding: 10px;
+            border: 1px solid #dddddd;
+            border-radius: 4px;
+            font-size: 14px;
+            transition: border-color 0.3s;
+        }
+        
+        .input-group input:focus {
+            border-color: #007bff;
+        }
+        
+        .button {
+            display: inline-block;
+            padding: 10px 20px;
+            background-color: #007bff;
+            color: #ffffff;
+            border: none;
+            border-radius: 4px;
+            font-size: 14px;
+            cursor: pointer;
+            transition: background-color 0.3s;
+        }
+        
+        .button:hover {
+            background-color: #0056b3;
+        }
+        
+    </style>
+</head>
+<body>
+    <div class="login-container">
+        <form class="login-form" method="POST" action="/add/{{idp}}/"> 
+            <h2>Add new Video Details</h2>
+            {% csrf_token %}
+            <div class="input-group">
+                <label for="username">Name:</label>
+                <input type="text" id="Name" name="Name" required>
+            </div>
+            <div class="input-group">
+                <label for="password">Description:</label>
+                <textarea id="password" rows="10"style="width:80%;" name="description" required></textarea>
+            </div>
+            <div class="input-group">
+                <label for="username">Link:</label>
+                <input type="text" id="link" name="link" required>
+            </div>
+            <button class="button" type="submit">Add Item</button>
+        </form>
+    </div>
+</body>
+</html>

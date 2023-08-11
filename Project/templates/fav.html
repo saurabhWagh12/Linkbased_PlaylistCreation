@@ -1,0 +1,25 @@
+{% extends 'base.html' %} 
+
+{% block container %}
+<div style="
+    margin:8%;
+    display:flex;
+    flex-wrap:wrap;
+    justify-content:space-between;
+    ">
+
+    {% for item in playlist %}
+        <div class="card" style="width: 18rem; margin:2%;">
+            {% comment %} <img src="..." class="card-img-top" alt="..."> {% endcomment %}
+            <div class="card-body">
+            <h5 class="card-title">{{item.name}}</h5>
+            <p class="card-text">{{item.description}}</p>
+            <a href="/playlist/{{item.id}}/" class="btn btn-primary">View PlayList</a>
+            </div>
+        </div>
+    {% endfor %}
+
+
+
+</div>
+{% endblock container %}
